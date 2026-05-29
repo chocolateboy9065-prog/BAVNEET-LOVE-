@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Bavneet ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#ffe6ef;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.card{
+    background:white;
+    width:90%;
+    max-width:450px;
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+h1{
+    color:#ff2d75;
+}
+
+.btns{
+    position:relative;
+    height:150px;
+}
+
+button{
+    border:none;
+    padding:15px 35px;
+    font-size:20px;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+#yesBtn{
+    background:#ff2d75;
+    color:white;
+}
+
+#noBtn{
+    background:#f1f1f1;
+    position:absolute;
+    left:40px;
+    top:70px;
+}
+
+#success{
+    display:none;
+}
+
+#success img{
+    width:100%;
+    border-radius:20px;
+    margin-top:15px;
+}
+
+.msg{
+    color:#666;
+    margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="card" id="question">
+    <h1>💖 BAVNEET, will you forever be mine? 💖</h1>
+
+    <div class="btns">
+        <button id="yesBtn">Yes 💕</button>
+        <button id="noBtn">No 🙈</button>
+    </div>
+
+    <p class="msg">You can't escape love 😜</p>
+</div>
+
+<div class="card" id="success">
+    <h1>🎉 Yayy! You said YES! 🎉</h1>
+    <p>Knew you'd say yes ❤️</p>
+
+    <img src="bavneet.jpg" alt="Bavneet">
+
+    <p class="msg">
+        No matter where life takes us,<br>
+        you'll always be my favorite person ❤️
+    </p>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+function moveButton(){
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 80);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("touchstart", moveButton);
+
+document.getElementById("yesBtn").onclick = () => {
+    document.getElementById("question").style.display = "none";
+    document.getElementById("success").style.display = "block";
+};
+</script>
+
+</body>
+</html>
